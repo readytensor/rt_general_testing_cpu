@@ -36,7 +36,7 @@ class PredictorModel:
         self.kwargs = kwargs
 
     def fit_regression(self, train_data: pd.DataFrame) -> None:
-        self.mean = train_data[self.data_schema["target"]].mean()
+        self.mean = train_data[self.data_schema["target"]["name"]].mean()
 
     def regression_predict(self, test_data: pd.DataFrame) -> pd.DataFrame:
         test_data["prediction"] = self.mean
