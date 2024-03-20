@@ -1,7 +1,7 @@
 # get slim base image for python
 FROM python:3.9.17-slim-bullseye as builder
 
-COPY ./requirements/requirements.txt /opt/
+COPY ./requirements.txt /opt/
 RUN pip3 install --no-cache-dir -r /opt/requirements.txt
 COPY src /opt/src
 COPY ./entry_point.sh /opt/
