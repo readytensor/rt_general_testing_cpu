@@ -103,9 +103,6 @@ class PredictorModel:
         model_path = os.path.join(predictor_dir_path, "predictor.joblib")
         return joblib.load(model_path)
 
-    def __str__(self):
-        # sort params alphabetically for unit test to run successfully
-        return f"Model name: {self.MODEL_NAME}"
 
 
 def train_predictor_model(data_schema: str, train_data: pd.DataFrame) -> PredictorModel:
@@ -122,6 +119,7 @@ def train_predictor_model(data_schema: str, train_data: pd.DataFrame) -> Predict
 
 
 def predict_with_model(model: PredictorModel, test_data: pd.DataFrame) -> pd.DataFrame:
+
     if model.model_category == "regression":
         pred = model.regression_predict(test_data=test_data)
     elif model.model_category in ["binary_classification", "multiclass_classification"]:
