@@ -20,7 +20,7 @@ class PredictorModel:
     This class provides a consistent interface that can be used with other models.
     """
 
-    MODEL_NAME = "predictor"
+    MODEL_NAME = "predictor_cpu"
 
     def __init__(
         self,
