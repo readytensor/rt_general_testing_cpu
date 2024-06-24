@@ -234,4 +234,5 @@ class ResourceTracker(object):
 
         self.logger.info(f"CPU Memory allocated (peak): {peak_memory / 10**6:.2f}MB")
         self.logger.info(f"Execution time: {elapsed_time:.2f} seconds")
-        self.logger.info(f"CPU count: {os.cpu_count()}")
+        self.logger.info(f"Host CPU count: {os.cpu_count()}")
+        self.logger.info(f"Container CPU count: {len(os.sched_getaffinity(0))}")
