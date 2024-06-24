@@ -1,5 +1,5 @@
 # get slim base image for python
-FROM python:3.13.0b2-slim-bullseye as builder
+FROM python:3.9.17-slim-bullseye as builder
 
 COPY ./requirements.txt /opt/
 RUN pip3 install --no-cache-dir -r /opt/requirements.txt
